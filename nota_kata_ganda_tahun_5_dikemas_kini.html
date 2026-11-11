@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#dff4e9">
+<title>📚 BUKU NOTA DIGITAL • BAHASA MELAYU TAHUN 5</title>
+<style>
+:root{
+ --mint:#dff4e9;--mint2:#bfe7d3;--blue:#dceeff;--blue2:#b9d9f5;
+ --lav:#eee5ff;--lav2:#d8c8fa;--yellow:#fff3c9;--cream:#fffaf0;
+ --ink:#34445a;--muted:#66758a;--white:#fff;--line:#e9e6df;
+ --shadow:0 12px 30px rgba(76,91,110,.10);--radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#f6fcf8,#f8f7ff 55%,#fffaf0);color:var(--ink);
+ font-family:ui-rounded,"Trebuchet MS",system-ui,-apple-system,sans-serif;line-height:1.65}
+a{color:inherit}
+.wrap{width:min(1120px,92%);margin:auto}
+.hero{padding:42px 0 28px}
+.hero-card{position:relative;overflow:hidden;border:1px solid #e7eee8;border-radius:30px;
+ background:linear-gradient(120deg,#e2f7eb,#e5efff 58%,#f2eaff);padding:clamp(24px,5vw,54px);
+ box-shadow:var(--shadow)}
+.hero-card:before,.hero-card:after{content:"✦";position:absolute;color:#fff;font-size:42px;opacity:.8}
+.hero-card:before{right:8%;top:12%}.hero-card:after{right:18%;bottom:12%;font-size:28px}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}
+.kicker{display:inline-block;background:#ffffffb8;border:1px solid #fff;padding:7px 13px;border-radius:999px;
+ font-size:.78rem;font-weight:800;letter-spacing:.08em;color:#638477}
+h1{font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.05;margin:16px 0 12px;color:#40566a}
+h1 span{color:#658f80}
+.lead{max-width:650px;color:#53667a;font-size:1.08rem}
+.mascot{font-size:clamp(7rem,17vw,12rem);text-align:center;filter:drop-shadow(0 10px 6px #a9b9b455)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:#ffffffc9;
+ font-size:.84rem;font-weight:700}
+nav{position:sticky;top:0;z-index:10;background:#fffdf4eF;backdrop-filter:blur(12px);border-block:1px solid var(--line)}
+.nav-inner{display:flex;gap:8px;overflow-x:auto;padding:11px 0;scrollbar-width:thin}
+nav a{text-decoration:none;white-space:nowrap;font-size:.88rem;font-weight:800;padding:8px 13px;border-radius:999px;background:#f3f6f3}
+nav a:hover{background:var(--mint2)}
+main{padding:28px 0 60px}
+section{scroll-margin-top:82px;margin:26px 0 42px}
+.section-head{display:flex;align-items:center;gap:13px;margin-bottom:18px}
+.num{width:48px;height:48px;display:grid;place-items:center;border-radius:16px;font-size:1.35rem;font-weight:900}
+h2{font-size:clamp(1.45rem,3vw,2rem);margin:0;line-height:1.2}
+.sub{margin:4px 0 0;color:var(--muted);font-size:.95rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:clamp(17px,3vw,26px);box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.info{display:flex;gap:13px;align-items:flex-start}
+.icon{font-size:2rem;line-height:1.2;flex:0 0 auto}
+h3{font-size:1.08rem;margin:0 0 7px}
+p{margin:7px 0}
+ul{padding-left:20px;margin:8px 0}
+li{margin:5px 0}
+.formula{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+ background:#f8faf9;border:1px dashed #b9c9c1;border-radius:16px;padding:15px;margin-top:12px;font-weight:900}
+.token{padding:9px 14px;border-radius:12px;background:#fff;box-shadow:0 3px 10px #0000000b}
+.arrow{color:#91a49a;font-size:1.25rem}
+.examples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:15px}
+.example{border:1px solid var(--line);border-radius:17px;padding:15px;background:#fffdf9}
+.word{font-size:1.15rem;font-weight:900;margin-bottom:4px}
+.meaning{font-size:.88rem;color:var(--muted);margin-bottom:7px}
+.sentence{font-size:.94rem}
+.illustration{font-size:1.75rem;float:right;margin-left:8px}
+.note{border-radius:16px;padding:14px 16px;margin-top:15px;background:#fff8df;border:1px solid #f3e6b9}
+.note strong{color:#806a32}
+.type-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.07em;font-weight:900;color:#738397}
+.type-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:14px}
+.type-card{border-radius:18px;padding:17px;border:1px solid var(--line)}
+.type-card h3{margin:7px 0}
+.table-wrap{overflow-x:auto;border-radius:18px;border:1px solid var(--line);background:white;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th,td{text-align:left;vertical-align:top;padding:15px;border-bottom:1px solid #eee}
+th{font-size:.92rem}
+td{font-size:.91rem}
+tbody tr:last-child td{border-bottom:0}
+.full{background:#e5f5eb}.partial{background:#e7f1ff}.rhythm{background:#f0eaff}
+.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.summary{padding:20px;border-radius:20px;text-align:center;border:1px solid var(--line)}
+.summary .big{font-size:2.6rem}
+.summary p{font-size:.9rem}
+footer{text-align:center;padding:28px 15px 40px;color:#718092}
+footer strong{color:#587f70}
+.small{font-size:.85rem;color:var(--muted)}
+@media(max-width:760px){
+ .hero-grid{grid-template-columns:1fr}.mascot{order:-1;font-size:7rem}
+ .grid,.examples{grid-template-columns:1fr}
+ .type-grid,.summary-grid{grid-template-columns:1fr}
+ .hero{padding-top:20px}
+}
+@media(prefers-reduced-motion:no-preference){
+ .mascot{animation:bob 3.5s ease-in-out infinite}
+ @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+ .card{transition:transform .2s ease,box-shadow .2s ease}
+ .card:hover{transform:translateY(-3px);box-shadow:0 16px 34px #4c5b6e1c}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="wrap hero-card">
+  <div class="hero-grid">
+   <div>
+    <h1 style="font-size:clamp(1.8rem,4.5vw,3.2rem)">📚 BUKU NOTA DIGITAL •<br><span>BAHASA MELAYU TAHUN 5</span></h1>
+    <p class="lead"><strong>Nota Pembelajaran: Kata Ganda</strong><br>Kenali kata ganda penuh, kata ganda separa dan kata ganda berentak melalui penerangan ringkas, contoh perkataan serta ayat.</p>
+    <div class="hero-tags"><span class="pill">🌿 Mudah difahami</span><span class="pill">🔎 Nota bergambar</span><span class="pill">✨ Mesra telefon</span></div>
+   </div>
+   <div class="mascot" role="img" aria-label="Maskot detektif comel">🕵🏻‍♀️📖</div>
+  </div>
+ </div>
+</header>
+<nav><div class="wrap nav-inner">
+ <a href="#pengenalan">Pengenalan</a><a href="#penuh">Kata Ganda Penuh</a><a href="#separa">Kata Ganda Separa</a><a href="#berentak">Kata Ganda Berentak</a><a href="#banding">Perbandingan</a><a href="#rumusan">Rumusan</a>
+</div></nav>
+<main class="wrap">
+<section id="pengenalan">
+ <div class="section-head"><div class="num" style="background:var(--yellow)">🔍</div><div><h2>Kenali Kata Ganda</h2><p class="sub">Sebelum menyiasat, mari fahami maksudnya.</p></div></div>
+ <div class="card">
+  <div class="info"><div class="icon">📚</div><div><h3>Apakah kata ganda?</h3><p>Kata ganda ialah perkataan yang terbentuk melalui proses pengulangan kata dasar, sama ada seluruh perkataan atau sebahagian perkataan, dengan atau tanpa perubahan bunyi.</p></div></div>
+  <div class="type-grid">
+   <div class="type-card full"><div class="type-label">Kes 01</div><div class="icon">📗</div><h3>Kata Ganda Penuh</h3><p>Seluruh kata dasar diulang.</p><strong>Contoh: buku-buku</strong></div>
+   <div class="type-card partial"><div class="type-label">Kes 02</div><div class="icon">🍃</div><h3>Kata Ganda Separa</h3><p>Sebahagian kata dasar diulang.</p><strong>Contoh: pepohon</strong></div>
+   <div class="type-card rhythm"><div class="type-label">Kes 03</div><div class="icon">🎵</div><h3>Kata Ganda Berentak</h3><p>Pengulangan dengan perubahan bunyi.</p><strong>Contoh: lauk-pauk</strong></div>
+  </div>
+ </div>
+</section>
+
+<section id="penuh">
+ <div class="section-head"><div class="num" style="background:var(--mint)">🟢</div><div><h2>1. Kata Ganda Penuh</h2><p class="sub">Fail Kes 01 · Pengulangan seluruh perkataan</p></div></div>
+ <div class="grid">
+  <div class="card"><h3>📖 Definisi</h3><p>Kata ganda penuh ialah perkataan yang terbentuk melalui pengulangan seluruh kata dasar tanpa perubahan pada bentuk kata dasar tersebut.</p></div>
+  <div class="card"><h3>🧩 Cara pembentukan</h3><p>Seluruh kata dasar diulang sekali.</p><div class="formula"><span class="token">buku</span><span class="arrow">+</span><span class="token">buku</span><span class="arrow">→</span><span class="token">buku-buku</span></div></div>
+ </div>
+ <div class="card" style="margin-top:15px"><h3>⭐ Ciri-ciri utama</h3><ul><li>Seluruh kata dasar diulang.</li><li>Kedua-dua unsur mempunyai bentuk yang sama.</li><li>Tanda sempang (-) digunakan antara unsur yang digandakan.</li><li>Makna kata ganda bergantung pada konteks penggunaannya.</li></ul></div>
+ <h3 style="margin:22px 0 8px">🗂️ Contoh perkataan dan ayat</h3>
+ <div class="examples">
+  <div class="example"><span class="illustration">📚</span><div class="word">Buku-buku</div><div class="meaning">Banyak buku.</div><div class="sentence">Buku-buku cerita itu disusun dengan kemas di atas rak.</div></div>
+  <div class="example"><span class="illustration">🧒🏻🧒🏽</span><div class="word">Murid-murid</div><div class="meaning">Ramai murid.</div><div class="sentence">Murid-murid sedang membaca buku di dalam perpustakaan.</div></div>
+  <div class="example"><span class="illustration">🏠</span><div class="word">Rumah-rumah</div><div class="meaning">Banyak rumah.</div><div class="sentence">Rumah-rumah di kawasan itu dihiasi dengan lampu yang berwarna-warni.</div></div>
+  <div class="example"><span class="illustration">🌸</span><div class="word">Cantik-cantik</div><div class="meaning">Menunjukkan sifat cantik.</div><div class="sentence">Bunga-bunga di taman itu cantik-cantik belaka.</div></div>
+  <div class="example"><span class="illustration">🌳</span><div class="word">Besar-besar</div><div class="meaning">Menunjukkan saiz yang besar.</div><div class="sentence">Pokok-pokok di kawasan hutan itu besar-besar belaka.</div></div>
+  <div class="example"><span class="illustration">🍽️</span><div class="word">Makan-makan</div><div class="meaning">Makan untuk berseronok atau bersantai.</div><div class="sentence">Keluarga Amir mengadakan majlis makan-makan pada hujung minggu.</div></div>
+  <div class="example"><span class="illustration">👟</span><div class="word">Mahal-mahal</div><div class="meaning">Menunjukkan harga yang tinggi.</div><div class="sentence">Kasut-kasut di kedai itu mahal-mahal belaka.</div></div>
+ </div>
+ <div class="note"><strong>💡 Ingat!</strong> Kata ganda penuh mengulang keseluruhan kata dasar tanpa mengubah bentuk asalnya.</div>
+</section>
+
+<section id="separa">
+ <div class="section-head"><div class="num" style="background:var(--blue)">🔵</div><div><h2>2. Kata Ganda Separa</h2><p class="sub">Fail Kes 02 · Pengulangan sebahagian perkataan</p></div></div>
+ <div class="grid">
+  <div class="card"><h3>📖 Definisi</h3><p>Kata ganda separa ialah perkataan yang terbentuk melalui pengulangan sebahagian daripada kata dasar, biasanya suku kata pertama.</p></div>
+  <div class="card"><h3>🧩 Cara pembentukan</h3><p>Sebahagian kata dasar diulang dan bahagian yang lain dikekalkan.</p><div class="formula"><span class="token">pohon</span><span class="arrow">→</span><span class="token">pe</span><span class="token">pohon</span></div></div>
+ </div>
+ <div class="card" style="margin-top:15px"><h3>⭐ Ciri-ciri utama</h3><ul><li>Hanya sebahagian kata dasar mengalami pengulangan.</li><li>Biasanya melibatkan pengulangan suku kata pertama.</li><li>Bentuk kata yang terhasil boleh mengalami perubahan vokal pada bahagian yang digandakan.</li><li>Keseluruhan kata dasar tidak diulang.</li></ul></div>
+ <h3 style="margin:22px 0 8px">🗂️ Contoh perkataan dan ayat</h3>
+ <div class="examples">
+  <div class="example"><span class="illustration">🧍‍♂️</span><div class="word">Lelaki</div><div class="meaning">Kata dasar: laki.</div><div class="sentence">Lelaki itu sedang membantu seorang warga emas melintas jalan.</div></div>
+  <div class="example"><span class="illustration">🌲</span><div class="word">Pepohon</div><div class="meaning">Kata dasar: pohon.</div><div class="sentence">Pepohon yang rendang memberikan teduhan kepada pengunjung taman.</div></div>
+  <div class="example"><span class="illustration">🍂</span><div class="word">Dedaun</div><div class="meaning">Kata dasar: daun.</div><div class="sentence">Dedaun kering berguguran apabila ditiup angin.</div></div>
+  <div class="example"><span class="illustration">🍡</span><div class="word">Bebola</div><div class="meaning">Kata dasar: bola.</div><div class="sentence">Bebola ikan itu dimasukkan ke dalam sup yang panas.</div></div>
+  <div class="example"><span class="illustration">🐴</span><div class="word">Kekuda</div><div class="meaning">Kata dasar: kuda.</div><div class="sentence">Kekuda besi digunakan untuk menyokong struktur bumbung bangunan.</div></div>
+  <div class="example"><span class="illustration">👄</span><div class="word">Lelangit</div><div class="meaning">Kata dasar: langit.</div><div class="sentence">Doktor memeriksa bahagian lelangit pesakit tersebut.</div></div>
+  <div class="example"><span class="illustration">📐</span><div class="word">Sesiku</div><div class="meaning">Kata dasar: siku.</div><div class="sentence">Tukang kayu menggunakan sesiku untuk memastikan sudut papan itu tepat.</div></div>
+  <div class="example"><span class="illustration">🚲</span><div class="word">Jejari</div><div class="meaning">Kata dasar: jari.</div><div class="sentence">Jejari basikal itu disusun dengan kemas pada bahagian rodanya.</div></div>
+ </div>
+ <div class="note"><strong>💡 Ingat!</strong> Kata ganda separa hanya mengulang sebahagian kata dasar, bukannya keseluruhan perkataan.</div>
+</section>
+
+<section id="berentak">
+ <div class="section-head"><div class="num" style="background:var(--lav)">🟣</div><div><h2>3. Kata Ganda Berentak</h2><p class="sub">Fail Kes 03 · Pengulangan dengan perubahan bunyi</p></div></div>
+ <div class="grid">
+  <div class="card"><h3>📖 Definisi</h3><p>Kata ganda berentak ialah perkataan yang terbentuk melalui pengulangan kata dasar dengan perubahan bunyi tertentu untuk menghasilkan rentak atau irama.</p></div>
+  <div class="card"><h3>🧩 Cara pembentukan</h3><p>Unsur kata diulang dengan perubahan bunyi vokal, konsonan atau kedua-duanya.</p><div class="formula"><span class="token">lauk</span><span class="arrow">→</span><span class="token">lauk-pauk</span></div></div>
+ </div>
+ <div class="card" style="margin-top:15px"><h3>⭐ Ciri-ciri utama</h3><ul><li>Kedua-dua unsur mempunyai persamaan bunyi atau rentak.</li><li>Terdapat perubahan bunyi antara unsur perkataan.</li><li>Perubahan bunyi boleh melibatkan vokal, konsonan atau kedua-duanya.</li><li>Kebanyakan contoh ditulis dengan tanda sempang (-).</li></ul></div>
+ <h3 style="margin:22px 0 8px">🎵 Jenis pengulangan bunyi</h3>
+ <div class="type-grid">
+  <div class="type-card" style="background:#e8f5ed"><div class="icon">🔤</div><h3>Pengulangan bunyi vokal</h3><p>Perubahan bunyi vokal antara unsur perkataan.</p><strong>Contoh:</strong><br>sayur-mayur<br>kuih-muih<br>lauk-pauk</div>
+  <div class="type-card" style="background:#eaf2ff"><div class="icon">🔡</div><h3>Pengulangan bunyi konsonan</h3><p>Perubahan bunyi konsonan antara unsur perkataan.</p><strong>Contoh:</strong><br>gunung-ganang<br>bukit-bukau<br>batu-batan</div>
+  <div class="type-card" style="background:#f1eaff"><div class="icon">🎶</div><h3>Pengulangan bunyi bebas</h3><p>Perubahan bunyi yang melibatkan vokal dan konsonan.</p><strong>Contoh:</strong><br>kusut-masai<br>simpang-siur<br>ulang-alik<br>warna-warni</div>
+ </div>
+ <h3 style="margin:22px 0 8px">🗂️ Contoh perkataan dan ayat</h3>
+ <div class="examples">
+  <div class="example"><span class="illustration">🍲</span><div class="word">Lauk-pauk</div><div class="sentence">Ibu menyediakan pelbagai lauk-pauk untuk makan tengah hari.</div></div>
+  <div class="example"><span class="illustration">🥮</span><div class="word">Kuih-muih</div><div class="sentence">Pelbagai jenis kuih-muih dijual di gerai itu.</div></div>
+  <div class="example"><span class="illustration">🏔️</span><div class="word">Gunung-ganang</div><div class="sentence">Pemandangan gunung-ganang dari puncak bukit itu sangat indah.</div></div>
+  <div class="example"><span class="illustration">⛰️</span><div class="word">Bukit-bukau</div><div class="sentence">Kawasan bukit-bukau itu dilitupi tumbuhan hijau.</div></div>
+  <div class="example"><span class="illustration">🧑‍🦱</span><div class="word">Kusut-masai</div><div class="sentence">Rambut adik kelihatan kusut-masai selepas bangun tidur.</div></div>
+  <div class="example"><span class="illustration">🚦</span><div class="word">Simpang-siur</div><div class="sentence">Kenderaan bergerak secara simpang-siur di jalan raya yang sibuk.</div></div>
+  <div class="example"><span class="illustration">🚌</span><div class="word">Ulang-alik</div><div class="sentence">Ayah berulang-alik ke tempat kerja setiap hari.</div></div>
+  <div class="example"><span class="illustration">🪨</span><div class="word">Batu-batan</div><div class="sentence">Batu-batan di tepi sungai itu kelihatan licin.</div></div>
+  <div class="example"><span class="illustration">🌈</span><div class="word">Warna-warni</div><div class="sentence">Bunga-bunga yang warna-warni itu menceriakan kawasan taman.</div></div>
+ </div>
+ <div class="note"><strong>💡 Ingat!</strong> Kata ganda berentak mempunyai perubahan bunyi antara unsur perkataan dan menghasilkan rentak yang tersendiri.</div>
+</section>
+
+<section id="banding">
+ <div class="section-head"><div class="num" style="background:var(--yellow)">📊</div><div><h2>4. Jadual Perbandingan</h2><p class="sub">Lihat perbezaan ketiga-tiga jenis kata ganda.</p></div></div>
+ <div class="table-wrap"><table>
+  <thead><tr><th>Aspek</th><th class="full">🟢 Kata Ganda Penuh</th><th class="partial">🔵 Kata Ganda Separa</th><th class="rhythm">🟣 Kata Ganda Berentak</th></tr></thead>
+  <tbody>
+   <tr><th>Definisi</th><td>Pengulangan seluruh kata dasar.</td><td>Pengulangan sebahagian kata dasar.</td><td>Pengulangan dengan perubahan bunyi tertentu.</td></tr>
+   <tr><th>Cara pembentukan</th><td>Kata dasar diulang sepenuhnya.</td><td>Sebahagian kata dasar diulang.</td><td>Unsur perkataan diulang dengan perubahan bunyi.</td></tr>
+   <tr><th>Ciri-ciri</th><td>Kedua-dua unsur sama bentuk.</td><td>Hanya sebahagian kata dasar diulang.</td><td>Terdapat persamaan rentak dan perubahan bunyi.</td></tr>
+   <tr><th>Contoh</th><td>buku-buku<br>murid-murid<br>rumah-rumah</td><td>pepohon<br>dedaun<br>bebola</td><td>lauk-pauk<br>kuih-muih<br>gunung-ganang</td></tr>
+  </tbody>
+ </table></div>
+</section>
+
+<section id="rumusan">
+ <div class="section-head"><div class="num" style="background:var(--lav)">🌟</div><div><h2>5. Rumusan Nota</h2><p class="sub">Tiga kata kunci untuk membantu kita mengingati perbezaannya.</p></div></div>
+ <div class="summary-grid">
+  <div class="summary full"><div class="big">🟢</div><h3>KATA GANDA PENUH</h3><p><strong>ULANG SELURUH</strong></p><p>buku-buku<br>rumah-rumah</p></div>
+  <div class="summary partial"><div class="big">🔵</div><h3>KATA GANDA SEPARA</h3><p><strong>ULANG SEBAHAGIAN</strong></p><p>pepohon<br>dedaun</p></div>
+  <div class="summary rhythm"><div class="big">🟣</div><h3>KATA GANDA BERENTAK</h3><p><strong>PERUBAHAN BUNYI</strong></p><p>lauk-pauk<br>kuih-muih</p></div>
+ </div>
+ <div class="card" style="margin-top:17px;text-align:center;background:linear-gradient(120deg,#e7f6ed,#eef1ff,#fff6d9)">
+  <div style="font-size:2.3rem">🕵🏻‍♀️✨📚</div><h3>Tahniah, Detektif Bahasa!</h3>
+  <p>Kini kita telah mengenali kata ganda penuh, kata ganda separa dan kata ganda berentak, termasuk cara pembentukan, ciri-ciri serta contoh penggunaannya dalam ayat.</p>
+  <strong>Bahasa Melayu Indah, Ilmu Bertambah!</strong>
+ </div>
+</section>
+</main>
+<footer><strong>BUKU NOTA DIGITAL • BAHASA MELAYU TAHUN 5</strong><br><span class="small">Teruskan membaca dan kenali keindahan bahasa!</span></footer>
+</body>
+</html>
